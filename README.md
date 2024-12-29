@@ -262,6 +262,12 @@ CREATE TABLE users (
 
 ---
 
+### View of login page
+
+![Main Page Screenshot](images/сторінка login.png)
+
+---
+
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
