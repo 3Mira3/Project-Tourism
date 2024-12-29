@@ -264,7 +264,7 @@ CREATE TABLE users (
 
 ### View of login page
 
-![Main Page Screenshot](/resources/css/images/login_page.png)
+![Main Page Screenshot](C:/Users/Chloe Price/IdeaProjects/tourism/src/main/login_page.png)
 
 ---
 
