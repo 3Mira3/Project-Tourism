@@ -72,7 +72,7 @@ cd <.../tourism>
    CREATE DATABASE tourism;
    ```
 
-   All tables will be automatically created in the database thanks to the "migration" feature.
+All tables will be automatically created in the database thanks to the "migration" feature.
    
 4. Open the file `src/main/resources/application.properties` and configure the database connection:
    ```properties
