@@ -262,12 +262,6 @@ CREATE TABLE users (
 
 ---
 
-### View of login page
-
-![Main Page Screenshot](C:/Users/Chloe Price/IdeaProjects/tourism/src/main/login_page.png)
-
----
-
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
