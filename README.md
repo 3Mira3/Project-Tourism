@@ -184,6 +184,28 @@ CREATE TABLE tours (
 );
 ```
 
+### `booking_items` Table:
+
+```sql
+CREATE TABLE booking_items (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    booking_id BIGINT NOT NULL,
+    description VARCHAR(255),
+    FOREIGN KEY (booking_id) REFERENCES bookings(id)
+);
+```
+
+### `users` Table:
+
+```sql
+CREATE TABLE users (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role VARCHAR(20) NOT NULL
+);
+```
+
 ---
 
 ## Usage
