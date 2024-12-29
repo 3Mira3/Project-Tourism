@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Туристи</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}" />
+  <style>
+    body {
+      background-image: url('/css/images/steampunk-banner.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Туристи</h1>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Ім'я</th>
+      <th>Прізвище</th>
+      <th>Телефон</th>
+      <th>Емейл</th>
+      <th>Дії</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="tourist : ${tourists}">
+      <td th:text="${tourist.touristId}"></td>
+      <td th:text="${tourist.name}"></td>
+      <td th:text="${tourist.surname}"></td>
+      <td th:text="${tourist.phone}"></td>
+      <td th:text="${tourist.email}"></td>
+      <td>
+        <a
+                th:href="@{/tourists/edit/{id}(id=${tourist.touristId})}"
+                class="button edit"
+        >Редагувати</a
+        >
+        <a
+                th:href="@{/tourists/delete/{id}(id=${tourist.touristId})}"
+                class="button delete"
+        >Видалити</a
+        >
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <!-- Розташування кнопок під таблицею -->
+  <div class="buttons-row">
+  <a href="/tourists/add" class="button">Додати Туриста</a>
+  <a href="/home" class="button back">Повернутися</a>
+  </div>
+</div>
+</body>
+</html>

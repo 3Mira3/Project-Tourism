@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Додати Елемент Бронювання</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}" />
+  <style>
+    body {
+      background-image: url('/css/images/steampunkB.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Додати Елемент Бронювання</h1>
+  <form
+          th:action="@{/booking-items/add}"
+          th:object="${bookingItem}"
+          method="post"
+          class="form-container"
+  >
+    <label for="booking">Бронювання:</label>
+    <select id="booking" th:field="*{booking.bookingId}" required>
+      <option value="" disabled selected>Вибрати бронювання</option>
+      <option
+              th:each="booking : ${bookings}"
+              th:value="${booking.bookingId}"
+              th:text="${'Booking ID: ' + booking.bookingId}"
+      ></option>
+    </select>
+    <div
+            th:if="${#fields.hasErrors('booking.bookingId')}"
+            th:errors="*{booking.bookingId}"
+            class="error"
+    ></div>
+
+    <label for="tour">Тур:</label>
+    <select id="tour" th:field="*{tour.tourId}" required>
+      <option value="" disabled selected>Вибрати тур</option>
+      <option
+              th:each="tour : ${tours}"
+              th:value="${tour.tourId}"
+              th:text="${'Tour ID: ' + tour.tourId}"
+      ></option>
+    </select>
+    <div
+            th:if="${#fields.hasErrors('tour.tourId')}"
+            th:errors="*{tour.tourId}"
+            class="error"
+    ></div>
+
+    <label for="quantity">Кількість:</label>
+    <input type="number" id="quantity" th:field="*{quantity}" required />
+    <div
+            th:if="${#fields.hasErrors('quantity')}"
+            th:errors="*{quantity}"
+            class="error"
+    ></div>
+
+    <button type="submit" class="button">Додати</button>
+  </form>
+  <a href="/booking-items" class="button back">Повернутися</a>
+</div>
+</body>
+</html>

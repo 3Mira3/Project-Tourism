@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Туризм</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}" />
+  <style>
+    body {
+      background-image: url('/css/images/steampunkF.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .header-block {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .photos-block {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .photos-block .photo {
+      width: 400px; /* Задайте розмір фотографії в два рази більший */
+      height: auto;
+    }
+
+    .buttons-block {
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: 20px 50px;
+      justify-content: center;
+    }
+
+    .buttons-block .button {
+      width: 120px;
+      text-align: center;
+      padding: 10px;
+      background-color: #bfa171; /* Новий колір кнопок */
+      color: #f5e6cc; /* Новий колір тексту на кнопках */
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .logout {
+      display: block;
+      margin: 50px auto 0;
+      text-align: center;
+      padding: 10px 20px;
+      background-color: #bfa171; /* Новий колір кнопки Вихід */
+      color: #f5e6cc; /* Новий колір тексту кнопки Вихід */
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!-- Верхній блок з текстом -->
+  <div class="header-block">
+    <h1 class="main-title">Туризм</h1>
+    <h2 class="subtitle">Управління туристами та замовленнями</h2>
+  </div>
+
+  <!-- Блок з фотографіями -->
+  <div class="photos-block">
+    <img src="/css/images/steampunk00.png" alt="Photo 1" class="photo">
+    <img src="/css/images/steampunk11.jpg" alt="Photo 2" class="photo">
+  </div>
+
+  <!-- Блок із кнопками -->
+  <div class="buttons-block">
+    <a th:href="@{/tourists}" class="button">Туристи</a>
+    <a th:href="@{/bookings}" class="button">Замовлення</a>
+    <a th:href="@{/tours}" class="button">Поїздки</a>
+    <a th:href="@{/booking-items}" class="button">Напрямки</a>
+  </div>
+
+  <!-- Кнопка Вихід -->
+  <form th:action="@{/logout}" method="post">
+    <button type="submit" class="button logout">Вихід</button>
+  </form>
+</div>
+</body>
+</html>

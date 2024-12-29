@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Редагувати Бронювання</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}" />
+  <style>
+    body {
+      background-image: url('/css/images/steampunkB.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Редагувати Бронювання</h1>
+
+  <form
+          th:action="@{/bookings/update/{id}(id=${booking.bookingId})}"
+          th:object="${booking}"
+          method="post"
+          class="form-container"
+  >
+    <input type="hidden" th:field="*{bookingId}" />
+
+    <div th:if="${#fields.hasErrors('tourist')}" class="error">
+      <span th:errors="*{tourist}">Помилка</span>
+    </div>
+    <label for="tourist">Турист:</label>
+    <select id="tourist" th:field="*{tourist.touristId}" required>
+      <option value="" disabled selected>Вибір туриста</option>
+      <option
+              th:each="tourist : ${tourists}"
+              th:value="${tourist.touristId}"
+              th:text="${tourist.name + ' ' + tourist.surname + ' (ID: ' + tourist.touristId + ')'}"
+      ></option>
+    </select>
+
+    <div th:if="${#fields.hasErrors('bookingDate')}" class="error">
+      <span th:errors="*{bookingDate}">Помилка</span>
+    </div>
+    <label for="bookingDate">Дата бронювання:</label>
+    <input
+            type="date"
+            id="bookingDate"
+            th:field="*{bookingDate}"
+            required
+            max="[[${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}]]"
+    />
+
+    <button type="submit" class="button">Зберегти</button>
+  </form>
+  <a href="/bookings" class="button back">Повернутися</a>
+</div>
+</body>
+</html>
