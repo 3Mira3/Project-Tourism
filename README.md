@@ -264,7 +264,7 @@ CREATE TABLE users (
 
 ### View of login page
 
-![Main Page Screenshot](images/сторінка login.png)
+![Main Page Screenshot](images/login_page.png)
 
 ---
 
