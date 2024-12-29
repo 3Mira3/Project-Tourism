@@ -225,6 +225,22 @@ CREATE TABLE users (
 
 1. Use the `Tours` section to view, add, or edit tour packages.
 
+### Managing Booking Items
+
+1. Navigate to the Bookings section.
+
+2. Select a specific booking to view or manage associated items.
+
+3. Add, update, or delete items related to the booking.
+
+### Managing Users
+
+1. Go to the Users section (admin access required).
+
+2. Add or modify user accounts.
+
+3. Assign roles (e.g., admin, user) to control access levels.
+
 ---
 
 ## Troubleshooting
