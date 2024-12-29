@@ -15,7 +15,7 @@ The "Tourism" project is a Java-based web application designed to manage tourist
 
 - **Backend**: Java (Spring Boot Framework)
 - **Frontend**: Thymeleaf templates, HTML5, CSS3
-- **Database**: PostgresSQL
+- **Database**: PostgreSQL
 - **Build Tool**: Maven
 - **Deployment**: Embedded Tomcat Server (packaged with Spring Boot)
 
@@ -34,7 +34,7 @@ The "Tourism" project is a Java-based web application designed to manage tourist
 
 2. **PostgresSQL Database**:
 
-   - Install PostgresSQL (version 8.0 or higher).
+   - Install PostgreSQL (version 8.0 or higher).
    - Install pgAdmin4.
    - Set up a database named `tourism`.
 
@@ -66,7 +66,7 @@ cd <.../tourism>
 
 ### Step 2: Configure the Database
 
-1. Open PostgresSQL Workbench or any database client.
+1. Open PostgreSQL Workbench or any database client.
 2. Create a new database:
    ```sql
    CREATE DATABASE tourism;
@@ -210,12 +210,12 @@ CREATE TABLE tours (
 1. **Application does not start**:
 
    - Check the database credentials in `application.properties`.
-   - Verify that the PostgresSQL service is running.
+   - Verify that the PostgreSQL service is running.
 
 2. **Database connection error**:
 
    - Ensure the `tourism` database exists.
-   - Verify that your PostgresSQL username and password are correct.
+   - Verify that your PostgreSQL username and password are correct.
 
 3. **Static resources not loading**:
 
